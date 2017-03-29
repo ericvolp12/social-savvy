@@ -11,3 +11,9 @@ chrome.extension.onMessage.addListener(
   	chrome.pageAction.show(sender.tab.id);
     sendResponse();
   });
+
+$(function(){
+    var bkg = chrome.extension.getBackgroundPage();
+    var group_members = Number($("#count_text").innerText.split(" ")[0]);
+    bkg.console.log(group_members);
+});
